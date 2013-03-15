@@ -36,6 +36,7 @@
 #define __CORDOVA_2_2_0 20200
 #define __CORDOVA_2_3_0 20300
 #define __CORDOVA_2_4_0 20400
+#define __CORDOVA_2_5_0 20500
 #define __CORDOVA_NA 99999      /* not available */
 
 /*
@@ -46,7 +47,7 @@
  #endif
  */
 #ifndef CORDOVA_VERSION_MIN_REQUIRED
-    #define CORDOVA_VERSION_MIN_REQUIRED __CORDOVA_2_4_0
+    #define CORDOVA_VERSION_MIN_REQUIRED __CORDOVA_2_5_0
 #endif
 
 /*
@@ -72,4 +73,12 @@
     #define CDV_DEPRECATED(version, msg) __attribute__((deprecated("Deprecated in Cordova " #version ". " msg)))
 #else
     #define CDV_DEPRECATED(version, msg) __attribute__((deprecated()))
+#endif
+
+// Enable this to log all exec() calls.
+#define CDV_ENABLE_EXEC_LOGGING 0
+#if CDV_ENABLE_EXEC_LOGGING
+    #define CDV_EXEC_LOG NSLog
+#else
+    #define CDV_EXEC_LOG(...) do {} while (NO)
 #endif

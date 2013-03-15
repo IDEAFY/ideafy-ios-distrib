@@ -21,8 +21,8 @@
 //  AppDelegate.m
 //  Ideafy
 //
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
+//  Created by Vincent WEYL on 3/12/2013.
+//  Copyright TAIAUT 2013. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -43,6 +43,10 @@
 
     [cookieStorage setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
 
+    int cacheSizeMemory = 8 * 1024 * 1024; // 8MB
+    int cacheSizeDisk = 32 * 1024 * 1024; // 32MB
+    NSURLCache* sharedCache = [[NSURLCache alloc] initWithMemoryCapacity:cacheSizeMemory diskCapacity:cacheSizeDisk diskPath:@"nsurlcache"];
+    [NSURLCache setSharedURLCache:sharedCache];
     self = [super init];
     return self;
 }
@@ -60,7 +64,6 @@
     self.window.autoresizesSubviews = YES;
 
     self.viewController = [[[MainViewController alloc] init] autorelease];
-    self.viewController.useSplashScreen = YES;
 
     // Set your app's start page by setting the <content src='foo.html' /> tag in config.xml.
     // If necessary, uncomment the line below to override it.
@@ -107,6 +110,11 @@
     NSUInteger supportedInterfaceOrientations = (1 << UIInterfaceOrientationPortrait) | (1 << UIInterfaceOrientationLandscapeLeft) | (1 << UIInterfaceOrientationLandscapeRight) | (1 << UIInterfaceOrientationPortraitUpsideDown);
 
     return supportedInterfaceOrientations;
+}
+
+- (void)applicationDidReceiveMemoryWarning:(UIApplication*)application
+{
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
 }
 
 @end
