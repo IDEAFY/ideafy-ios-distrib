@@ -20,8 +20,8 @@
 //  main.m
 //  Ideafy
 //
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
+//  Created by Vincent Weyl on March 25, 2013.
+//  Copyright TAIAUT 2013. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
