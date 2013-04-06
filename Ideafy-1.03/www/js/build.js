@@ -5,4 +5,18 @@
  * Copyright (c) 2012-2013 TAIAUT
  */
 
-require.config({baseUrl:"js/packages",deps:["main"],paths:{lib:"../libs",service:"../services","public":"public",connect:"connect",dashboard:"dashboard",library:"library",brainstorm:"brainstorm",twocents:"twocents"}})
+/* deps load before main script??*/
+require.config({
+	baseUrl : "js/packages",
+    deps : ["main"],
+    paths: {
+        lib : "../libs",
+        service : "../services",
+        public : "public",
+        connect : "connect",
+        dashboard : "dashboard",
+        library : "library",
+        brainstorm : "brainstorm",
+        twocents : "twocents"
+    }
+});
