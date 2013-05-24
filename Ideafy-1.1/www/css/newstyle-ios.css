@@ -3556,13 +3556,19 @@ li.color-item{
     z-index: 2000;
 }
 
-#muidea .confirm .option{
+#musession .confirm .option.votebutton{
     margin-top: 15px;
 }
 
 #muidea .sessionvote legend{
     color: #657b99;
     font-weight: bold;
+}
+
+#muidea .sessionvote .unanimity{
+    color: #4d4d4d;
+    font-size: 12px;
+    margin-left: 5px;
 }
 
 #muidea .votingitem{
