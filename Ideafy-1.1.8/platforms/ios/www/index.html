@@ -1,0 +1,57 @@
+<!--
+/**
+ * IDEAFY
+ * ======
+ * 
+ * https://github.com/TAIAUT/Ideafy
+ * Proprietary License - All rights reserved
+ * Author: Vincent Weyl <vincent.weyl@taiaut.com>
+ * Copyright (c) 2012-2013 TAIAUT
+ *
+ */
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Ideafy</title>
+	<meta id="mobile" name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
+  	<link rel="stylesheet" href="css/login-min.css">
+  	<link id="defaultstyle" class="currentStyle" rel="stylesheet" href="css/newstyle-ios-min.css">
+  	<script type="text/javascript" src="cordova-min.js"></script>
+
+</head>
+<body data-stack="destination">
+	<iframe src="http://37.153.96.26:3113/blank.html" style="display:none" frameborder="0"></iframe>
+	<div id="login">
+		<img src="img/logoLogInPage.png">
+		<div id="login-stack" data-loginstack="destination"></div>
+	</div>
+	<div id="newidea-popup"></div>
+	<div id="new2q-popup"></div>
+	<div id="new2c-popup"></div>
+	<div id="help-popup"></div>
+	<div id = "tip-popup"></div>
+    <div id="cache"></div>
+
+    <script type="text/javascript" charset="utf-8">
+        // Wait for Cordova to load
+        //
+        document.addEventListener("deviceready", onDeviceReady, false);
+        // Cordova is loaded and it is now safe to make calls Cordova methods
+        //
+        function onDeviceReady() {
+            var app = document.createElement('script');
+            app.setAttribute("data-main", "js/build");
+            app.setAttribute("src", "js/libs/require.js");
+            document.head.appendChild(app);
+            if (parseFloat(window.device.version) === 7.0) {
+                document.body.style.marginTop = "20px";
+            }
+        }        
+    </script>
+    
+</body>
+</html>
